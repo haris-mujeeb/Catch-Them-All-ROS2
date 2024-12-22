@@ -23,12 +23,11 @@ Follow these steps to install the `catch_them_all` and `catch_them_all_bringup` 
    ```bash
    mkdir -p ~/ros2_ws/src
    cd ~/ros2_ws/src
-
    ```
 
 2. **Clone this repository:**
    ```bash
-   git clone https://github.com/your_username/catcher_node.git
+   git clone https://github.com/haris-mujeeb/Catch-Them-All-ROS2.git
    ```
 
 3. **Build the workspace:**
