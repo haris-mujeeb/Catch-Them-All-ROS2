@@ -19,27 +19,18 @@ Before you begin, ensure you have met the following requirements:
 
 Follow these steps to install the `catch_them_all` and `catch_them_all_bringup` packages:
 
-1. **Create a ROS 2 Workspace**
-
-   If you don't have a ROS 2 workspace set up, create one using the following commands:
-
-   ```bash
-   mkdir -p ~/ros2_ws/src
-   cd ~/ros2_ws/src
-   ```
-
-2. **Clone this repository:**
+1. **Clone this repository:**
    ```bash
    git clone https://github.com/haris-mujeeb/Catch-Them-All-ROS2.git
    ```
 
-3. **Build the workspace:**
+2. **Build the workspace:**
    ```bash
    cd ~/ros2_ws
    colcon build
    ```
 
-4. **Source the workspace:**
+3. **Source the workspace:**
    ```bash
    source ~/ros2_ws/install/setup.bash
    ```
@@ -55,13 +46,16 @@ Follow these steps to install the `catch_them_all` and `catch_them_all_bringup` 
    - Start the Turtlesim simulation.
    - Spawn a catcher turtle and additional random turtles.
    - Launch the Catcher node to control the turtle.
+   Note: To execute python code, use turtlesim_catch_them_all_py.launch.py instead of catcher_app.launch.py
 
 2. **Manual commands:**
    Alternatively, you can run the nodes manually:
    ```bash
    ros2 run turtlesim turtlesim_node
-   ros2 run catcher_node catcher_node
+   ros2 run catcher_them_all spawner
+   ros2 run catcher_them_all catcher
    ```
+   Note: Use turtle_spawner and turtle_controller for python code
 
 ## Configuration
 
@@ -73,6 +67,7 @@ The Catcher node can be customized with the following:
 
 ### Published Topics
 - `/turtle1/cmd_vel` (geometry_msgs/msg/Twist): Publishes velocity commands to control the turtle.
+- `/alive_turtles` (my_robot_interfaces/msg/TurtleArray): Publishes an array with alive turtles with their object attributes (namely, x, y, theta).
 
 ### Subscribed Topics
 - `/turtle1/pose` (turtlesim/msg/Pose): Subscribes to the turtle's position.
